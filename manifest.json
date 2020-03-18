@@ -1,9 +1,9 @@
 {
-    "short_name": "COVID19",
+    "short_name": "COVID19 - CH",
     "name": "COVID-19 - Swiss figures",
     "theme_color": "#FFF",
     "background_color": "#FFF",
-    "start_url": "/index.html",
+    "start_url": "index.html",
     "display": "standalone",
     "orientation": "portrait",
     "icons": [
