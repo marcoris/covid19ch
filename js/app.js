@@ -9,7 +9,7 @@ xhttp.onreadystatechange = function() {
         var recovered = data.recovered;
         var deaths = data.deaths;
         var swissPopulation = 8570000;
-        var infectedWidth = 100 / swissPopulation * (confirmed + recovered + deaths) + 10;
+        var infectedWidth = 100 / swissPopulation * (confirmed + recovered + deaths);
         var populationWidth = 100 - infectedWidth;
 
         // Display data
