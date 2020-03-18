@@ -1,0 +1,23 @@
+{
+  "name": "covid19ch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcoris/covid19ch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcoris/covid19ch/issues"
+  },
+  "homepage": "https://github.com/marcoris/covid19ch#readme",
+  "dependencies": {
+    "bootstrap": "^4.4.1"
+  }
+}
