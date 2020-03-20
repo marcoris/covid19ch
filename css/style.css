@@ -1,0 +1,5 @@
+@import 'bootstrap.min.css';
+
+.card-body {
+    padding: 0;
+}
