@@ -17,8 +17,14 @@ xhttp.onreadystatechange = function() {
         document.getElementById("recovered").innerHTML = recovered;
         document.getElementById("deaths").innerHTML = deaths;
         document.getElementById("population").style.width = populationWidth + '%';
-        document.getElementById("population").innerHTML = populationWidth.toFixed(2) + '%';
         document.getElementById("infected").style.width = infectedWidth + '%';
+        
+        // Show population percentage when there is enought space
+        if (populationWidth > 15) {
+            document.getElementById("population").innerHTML = populationWidth.toFixed(2) + '%';
+        }
+
+        // Show infected percentage when there is enought space
         if (infectedWidth > 15) {
             document.getElementById("infected").innerHTML = infectedWidth.toFixed(2) + '%';
         }
