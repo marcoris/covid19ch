@@ -11,17 +11,52 @@ xhttp.onreadystatechange = function() {
         var swissPopulation = 8570000;
         var infectedWidth = 100 / swissPopulation * (confirmed + recovered + deaths);
         var populationWidth = 100 - infectedWidth;
+        var currentConfirmed = 0;
+        var currentRecovered = 0;
+        var currentDeaths = 0;
+        var currentPopulation = 0;
 
-        // Display data
-        document.getElementById("confirmed").innerHTML = confirmed;
-        document.getElementById("recovered").innerHTML = recovered;
-        document.getElementById("deaths").innerHTML = deaths;
+        // Confirmed
+        var timerConfirmed = setInterval(function() {
+            currentConfirmed += 1;
+            document.getElementById("confirmed").innerHTML = currentConfirmed;
+            if (currentConfirmed >= 500) {
+                document.getElementById("confirmed").innerHTML = confirmed;
+                clearInterval(timerConfirmed);
+            }
+        }, 0);
+        
+        // Recovered
+        var timerRecovered = setInterval(function() {
+            currentRecovered += 1;
+            document.getElementById("recovered").innerHTML = currentRecovered;
+            if (currentRecovered == recovered) {
+                clearInterval(timerRecovered);
+            }
+        }, 0);
+        
+        // Deaths
+        var timerDeaths = setInterval(function() {
+            currentDeaths += 1;
+            document.getElementById("deaths").innerHTML = currentDeaths;
+            if (currentDeaths == deaths) {
+                clearInterval(timerDeaths);
+            }
+        }, 0);
+
         document.getElementById("population").style.width = populationWidth + '%';
         document.getElementById("infected").style.width = infectedWidth + '%';
         
         // Show population percentage when there is enought space
         if (populationWidth > 15) {
-            document.getElementById("population").innerHTML = populationWidth.toFixed(2) + '%';
+            var timerPopulation = setInterval(function() {
+                currentPopulation += 0.1;
+                document.getElementById("population").innerHTML = currentPopulation.toFixed(2) + '%';
+                if (currentPopulation >= 30) {
+                    document.getElementById("population").innerHTML = populationWidth.toFixed(2) + '%';
+                    clearInterval(timerPopulation);
+                }
+            }, 0);
         }
 
         // Show infected percentage when there is enought space
