@@ -3,3 +3,8 @@
 .card-body {
     padding: 0;
 }
+
+.progress-bar.bg-success {
+    width: 0%;
+    transition: width 2s ease-in-out;
+}
