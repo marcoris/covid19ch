@@ -71,6 +71,7 @@ xhttp.onreadystatechange = function() {
             document.getElementById("deaths").innerHTML = currentDeaths;
             document.getElementById("population").style.width = '100%';
             document.getElementById("population").innerHTML = '100%';
+            alert('Server is busy. Try later');
         }
     }
 };
