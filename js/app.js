@@ -31,8 +31,9 @@ xhttp.onreadystatechange = function() {
             // Recovered
             var timerRecovered = setInterval(function() {
                 currentRecovered += 1;
-                document.getElementById("recovered").innerHTML = new Intl.NumberFormat('de-CH').format(currentRecovered);
-                if (currentRecovered == recovered) {
+                document.getElementById("recovered").innerHTML = currentRecovered;
+                if (currentRecovered >= 500) {
+                    document.getElementById("recovered").innerHTML = new Intl.NumberFormat('de-CH').format(recovered);
                     clearInterval(timerRecovered);
                 }
             }, 0);
@@ -40,8 +41,9 @@ xhttp.onreadystatechange = function() {
             // Deaths
             var timerDeaths = setInterval(function() {
                 currentDeaths += 1;
-                document.getElementById("deaths").innerHTML = new Intl.NumberFormat('de-CH').format(currentDeaths);
-                if (currentDeaths == deaths) {
+                document.getElementById("deaths").innerHTML = currentDeaths;
+                if (currentDeaths >= 500) {
+                    document.getElementById("deaths").innerHTML = new Intl.NumberFormat('de-CH').format(deaths);
                     clearInterval(timerDeaths);
                 }
             }, 0);
@@ -54,7 +56,7 @@ xhttp.onreadystatechange = function() {
                 var timerPopulation = setInterval(function() {
                     currentPopulation += 0.1;
                     document.getElementById("population").innerHTML = currentPopulation.toFixed(2) + '%';
-                    if (currentPopulation >= 30) {
+                    if (currentPopulation >= 40) {
                         document.getElementById("population").innerHTML = populationWidth.toFixed(2) + '%';
                         clearInterval(timerPopulation);
                     }
